@@ -7,9 +7,9 @@
 </head>
 <body>
 	<div id="source">
-	<img src="image/slt.png" align="left" width="100" height="100"/>
+	<img src="image/ind.jpg" align="left" width="200" height="110"/>
 	
-	<img src="image/etude.PNG" align="right" width="130" height="130"/>
+	<img src="image/phar.jpg" align="right" width="230" height="130"/>
 	<div align="center">
 		 <h3 class="titre">l'espace de pharmacie  </h3>
 		   <ul class="bar">
@@ -40,9 +40,12 @@
 <!--		</ul>-->
             </li>
      </div>
-     <br><br><br><br><br><br><br><br><br><br><br>
-    <div align="center"> <h1> Gestion de phamacie</h1>
-    	<br>Tel:779847659 <br><br>
+     </div>
+    <div align="center">
+             <br><br>  
+             <img src="image/index.jpg" align="center" width="330" height="230"/>
+           <h1> Gestion de phamacie</h1>
+    	<br>Tel:779847659 <br>
     	Courriel:ismail.gueye@orange-sonatel.com
 
 

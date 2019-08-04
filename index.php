@@ -1,7 +1,3 @@
-<?php 
-include_once "fonction.php";
-$conn=connect();
- ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +13,7 @@ $conn=connect();
 	<div align="center">
 		 <h3 class="titre">l'espace de pharmacie  </h3>
 		   <ul class="bar">
-			<li> <a href="" >Medicaments</a>
+			<li> <a href="pages/fournisseurs" >Medicaments</a>
 				
 <!--				<ul class="bar1">-->
 <!--					<li> <a href="" > liste des fournisseur </a> </li> -->
@@ -42,6 +38,7 @@ $conn=connect();
 <!--					<li> <a href="" > Ajouter liv</a> </li> -->
 <!--					<li> <a href="" > Lister des liv</a> </li>-->
 <!--		</ul>-->
+            </li>
      </div>
      <br><br><br><br><br><br><br><br><br><br><br>
     <div align="center"> <h1> Gestion de phamacie</h1>

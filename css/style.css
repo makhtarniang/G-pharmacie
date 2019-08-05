@@ -16,45 +16,45 @@ td{
 	text-align:center;
 	color:#008000;
 	text-shadow: 5px 0px 14px #004000;
-	empty-cells:center; 
-	height:80px
+	empty-cells:hide;
+	height:80px;
 	font-size:36px;
 	
 }
 
 ul{
 
-	margin:9;
-	padding:4;
+	margin:9px;
+	padding:4px;
 	list-style:none;
 	align-content: center; 
 	 white-space:nowrap;
-	 max-width:305px;
+	 max-width:45%;
 }
 
 .bar{
 	background: #008000;	
-	align-items:#003000;
-	size:#095;
+	align-items:center;
+
 }
 .bar > li{
 	display:inline-block;
 	vertical-align:top;
-	width:126px;
+	width:33%;
 	height:30px;
 	border-right:2px solid #BDB76B;
-	margin: 10 -5px  0 0;
+	margin: 10px -5px  0 0;
 	position:center;
     height:40px;
-  text-decoration-style:center;
-  grid-template-rows:center;
-  text-decoration-line:#00;
+  text-decoration-style:dashed;
+  grid-template-rows:auto;
+  text-decoration-line:none;
   text-align-last:center;
   transition-property:center; 
 }
 .bar > li > a{
 	color:#003000;
-	display:#00700;
+	display:inline;
 	font-family: "century Gothic", "Helvetica Neve", Helvetica, sans serif;
 	font-weight:bold;
 	text-align:left;

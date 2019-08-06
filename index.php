@@ -13,31 +13,14 @@
 	<div align="center">
 		 <h3 class="titre">l'espace de pharmacie  </h3>
 		   <ul class="bar">
-			<li> <a href="pages/fournisseurs" >Medicaments</a>
-				
-<!--				<ul class="bar1">-->
-<!--					<li> <a href="" > liste des fournisseur </a> </li> -->
-<!--					<li> <a href="ajout_fournisseur.php" > Ajouter des fournisseur </a> </li>-->
-<!--				</ul>	-->
-			 </li>
-			     <li> <a href="" > Fournisseurs </a>
-<!--				<ul class="bar1">-->
-<!--					<li> <a href="ajout_produit.php" > Ajouter des produit </a> </li> -->
-<!--					<li> <a href="liste_produit.php" > Lister des produit </a> </li>-->
-<!--				    </ul>-->
-			        </li>
-<!--			<li> <a href="" > Medicaments </a> -->
-<!--				<ul class="bar1">-->
-<!--					<li> <a href="" > Ajouter un Medicaments </a> </li> -->
-<!--					<li> <a href="liste_produit.php" > Lister des Medicaments </a> </li>	-->
-<!--				</ul>-->
-<!--			</li>-->
-			
-			<li> <a href="" > Livraisons </a> 
-<!--				   <ul class="bar1">-->
-<!--					<li> <a href="" > Ajouter liv</a> </li> -->
-<!--					<li> <a href="" > Lister des liv</a> </li>-->
-<!--		</ul>-->
+			<li>
+                <a href="pages/medicaments" >Medicaments</a>
+            </li>
+			     <li>
+                     <a href="pages/fournisseurs" > Fournisseurs </a>
+                 </li>
+			<li>
+                <a href="pages/livraison" > Livraisons </a>
             </li>
      </div>
      </div>

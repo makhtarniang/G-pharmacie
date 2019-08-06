@@ -1,56 +1,102 @@
 <?php
-  include_once"fonction.php";
-              $conn=connect();
-              $alls="SELECT *FROM produit";
-              $exe=mysqli_query($conn,$alls) or die(mysqli_error($conn));
-              if (isset($_POST['btnAjout'])) {
-                extract($_POST);
-                $sql="INSERT INTO produit(idproduit,libele, prixunitaire,stock,idCategorie) VALUES produit('$idproduit','$libele','$prixunitaire', '$stock','$idCategorie')";
-                $conn=mysqli_query($conn,$sql) or die (mysqli_error($conn));
-                if ($exe==true) {
-                echo "<script>alert('VOUS VENEZ D'AJOUTER UNE produit')</script>";                               
-                }
-                else
-              echo "VEUILLER REVOIR VOTRE INSERTION";
-              } 
-              ?>
+include_once '../../connection.php';
+$categories = "SELECT IdCategorie, libeleCategorie FROM Categorie";
+$categories = $db->query($categories);
+$categories = $categories->fetchAll(PDO::FETCH_OBJ);
+
+if (isset($_POST['save'])){
+    include_once '../../connection.php';
+    $libele = $_POST['libele'];
+    $pu = $_POST['pu'];
+    $stk = $_POST['stk'];
+    $cat = $_POST['cat'];
+    $stmt = $db->prepare("INSERT INTO Produit(libele, prixunitaire, stock, IdCategorie) VALUES (:libele,:pu,:stk,:cat)");
+    $stmt->bindParam(':libele',$libele);
+    $stmt->bindParam(':pu',$pu);
+    $stmt->bindParam(':stk',$stk);
+    $stmt->bindParam(':cat',$cat);
+    if ($stmt->execute()){
+        header('Location: index.php');
+    }
+    else
+        echo 'Non fait';
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>prduit</title>
-<style type="text/css">
-    body
-    {
-      position:absolute
-    }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ajout Produit</title>
+    <link rel="stylesheet"  type="text/css"  href="../../css/style.css" />
+
+
 </head>
-<body>
-<fieldset><legend><h2>produit</h2></legend>
-<form name="monformulaire" method="POST" action="">
-<table border=0 bgcolor="white" cellpadding="5" cellspacing="10" width="50%" height="50%" >
-  <tr>
-<td><label for="qut"><strong>libele:</strong></label></td>
-<td><input type="text" name="libele" placeholder="libele" id="pu"/></td>
-</tr>
-<tr>
-<td><label for="qut"><strong>prixunitaire:</strong></label></td>
-<td><input type="text" name="pu" placeholder="votre prixunitaire" id="pu"/></td>
-</tr>
-<tr>
-<td><label for="pu"><strong>quatite:</strong></label></td>
-<td><input type="text" name="pu" placeholder="quntite" id="qut"/></td>
-</tr>
-<tr>
-<td><label for="pu"><strong>stock:</strong></label></td>
-<td><input type="text" name="stock" placeholder="stock " id="stock"/></td>
-</tr>
-<tr>
-<td><input type="submit" name="gender" value="AJOUTER"/></td>
-<td><input type="reset" name="gender" value="ANNULER"/></tds>
-</tr>
-</table>
-</form>
-</fieldset>
+<body style="background-color: #A8BACE">
+<div id="source">
+    <img src="../../image/ind.jpg" align="left" width="200" height="110"/>
+
+    <img src="../../image/phar.jpg" align="right" width="230" height="130"/>
+    <div align="center">
+        <h3 class="titre">l'espace de pharmacie  </h3>
+        <ul class="bar">
+            <li>
+                <a href="../../pages/medicaments" >Medicaments</a>
+            </li>
+            <li>
+                <a href="../../pages/fournisseurs" > Fournisseurs </a>
+            </li>
+            <li>
+                <a href="../../pages/livraison" > Livraisons </a>
+            </li>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <h3 style="text-align: center; color: blue">Produit / Nouveau</h3>
+    <form method="post">
+        <div class="row">
+            <div class="col-25">
+                <label for="libele">Libele </label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="libele" placeholder="Libele..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="pu">Prix Unitaire</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="pu" name="pu" placeholder="Prix Unitaire..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="stk">Stock</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="stk" name="stk" placeholder="Stock..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="cat">Categorie</label>
+            </div>
+            <div class="col-75">
+                <select id="cat" name="cat">
+                    <option value="">Choisir La Categorie</option>
+                    <?php foreach ($categories as $category): ?>
+                        <option value="<?= $category->IdCategorie?>"><?= $category->libeleCategorie?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row button button1">
+            <input type="submit" value="Ajouter" name="save">
+        </div>
+    </form>
+</div>
+
 </body>
 </html>
